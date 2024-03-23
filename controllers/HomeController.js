@@ -8,3 +8,7 @@ export const index = (req, res) => {
     res.status(200).send({ message: `${year} is not Leap Year` });
             
 };
+
+export const web = (req, res) => {
+    res.send('Hello Home');
+}

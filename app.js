@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import connectDb from './config/db.js';
 import routes from './routes/web.js';
 import auth from './routes/auth.js';
+import web from './routes/webView.js';
 dotenv.config();
 
 //Connect DB
@@ -21,6 +22,8 @@ app.use(morgan("dev")); //give the current hit api name
 
 app.use("/api/auth",auth);
 app.use("/api/web",routes);
+app.use("/",web);
+
 app.listen(port,()=>{
     console.log(`Server Starting at port : ${port}`)
 })
